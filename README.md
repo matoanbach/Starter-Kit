@@ -65,45 +65,55 @@ Now let's walk through some methods (functions) that we are going to use in each
 
 ```cpp
 Adafruit_ST7735::Adafruit_ST7735(<error-type> cs, <error-type> dc, <error-type> mosi, <error-type> sclk, <error-type> rst)
-+4 overloads
+Instantiate Adafruit ST7735 driver with software SPI
 
-    Instantiate Adafruit ST7735 driver with software SPI
-
-    Parameters:
+Parameters:
     cs – Chip select pin #
     dc – Data/Command pin #
     mosi – SPI MOSI pin #
     sclk – SPI Clock pin #
     rst – Reset pin # (optional, pass -1 if unused)
+```
 
+```cpp
 void Adafruit_ST7735::initR(<error-type> options = 0)
     Initialization code common to all ST7735R displays
-    Parameters:
+Parameters:
     options – Tab color from adafruit purchase
+```
 
+```cpp
 virtual void GFXcanvas1::fillScreen(<error-type> color)
     Fill the framebuffer completely with one color
     Parameters:
     color – Binary (on or off) color to fill with
+```
 
+```cpp
 inline void Adafruit_GFX::setTextColor(<error-type> c)
     Set text font color with transparant background
     Parameters:
     c – 16-bit 5-6-5 Color to draw text with
     Note:
     For 'transparent' background, background and foreground are set to same color rather than using a separate flag.
+```
 
+```cpp
 void Adafruit_GFX::setTextSize(<error-type> s)
     Set text 'magnification' size. Each increase in s makes 1 pixel that much bigger.
     Parameters:
     s – Desired text size. 1 is default 6x8, 2 is 12x16, 3 is 18x24, etc
+```
 
+```cpp
 inline void Adafruit_GFX::setCursor(<error-type> x, <error-type> y)
     Set text cursor location
     Parameters:
     x – X coordinate in pixels
     y – Y coordinate in pixels
+```
 
+```cpp
 void println(const char[])
     Print a one line including "/n"
     Parameters:
@@ -112,6 +122,9 @@ void println(const char[])
 ```
 
 ### MPU Sensors: <code>Adafruit_MPU6050.h</code>, <code>Adafruit_Sensor.h</code>, <code>Wire.h</code>
+
+Below is a struct (like a menu of sensor values) that Adafruit library gives to us.
+We can select any sensor values we want.
 
 ```h
 /* Sensor event (36 bytes) */
@@ -166,4 +179,165 @@ typedef struct {
                        object, in meters. */
   };                ///< Union for the wide ranges of data we can carry
 } sensors_event_t;
+```
+
+```cpp
+bool Adafruit_MPU6050::begin(
+    uint8_t     i2c_address = MPU6050_I2CADDR_DEFAULT,
+    TwoWire * 	wire = &Wire,
+    int32_t 	sensor_id = 0 
+)	
+Sets up the hardware and initializes I2C.
+Parameters
+    i2c_address:    The I2C address to be used.
+    wire:   	    The Wire object to be used for I2C connections.
+    sensor_id	    The user-defined ID to differentiate different sensors
+
+Returns
+    True if initialization was successful, otherwise false.
+```
+
+```cpp
+void Adafruit_MPU6050::setAccelerometerRange	(
+    mpu6050_accel_range_t 	new_range	
+)
+Sets the accelerometer measurement range.
+Parameters
+new_range: The new range to set. Must be a mpu6050_accel_range_t
+```
+
+```cpp
+
+void Adafruit_MPU6050::setGyroRange	(	
+    mpu6050_gyro_range_t new_range	
+)	
+Sets the polarity of the INT pin when active.
+Parameters
+    active_low:	If true the pin will be low when an interrupt is active If false the pin will be high when an interrupt is active
+```
+```cpp
+void Adafruit_MPU6050::setFilterBandwidth	(	
+    mpu6050_bandwidth_t bandwidth	
+)	
+Sets the bandwidth of the Digital Low-Pass Filter.
+Parameters
+    bandwidth:	the new mpu6050_bandwidth_t bandwidth
+
+```
+```cpp
+bool Adafruit_MPU6050::getEvent	(
+    sensors_event_t * 	accel,
+    sensors_event_t * 	gyro,
+    sensors_event_t * 	temp 
+)	
+Gets the most recent sensor event, Adafruit Unified Sensor format.
+Parameters
+    accel:	Pointer to an Adafruit Unified sensor_event_t object to be filled with acceleration event data.
+    gyro:	Pointer to an Adafruit Unified sensor_event_t object to be filled with gyroscope event data.
+    temp:	Pointer to an Adafruit Unified sensor_event_t object to be filled with temperature event data.
+Returns
+    True on successful read
+```
+
+### ESP32: <code>WiFi.h</code>, <code>WiFiUDP.h</code>
+```cpp
+bool WiFiAPClass::softAP(
+    const char *ssid, 
+    const char *passphrase = (const char *)__null,
+    int channel = 1,
+    int ssid_hidden = 0,
+    int max_connection = 4, 
+    bool ftm_responder = false
+)
+Set up an access point
+Parameters:
+    ssid:               Pointer to the SSID (max 63 char).
+    passphrase:         (for WPA2 min 8 char, for open use NULL)
+    channel:            WiFi channel number, 1 - 13.
+    ssid_hidden:        Network cloaking (0 = broadcast SSID, 1 = hide SSID)
+    max_connectionMax: simultaneous connected clients, 1 - 4.
+```
+```cpp
+uint8_t WiFiUDP::begin(
+    <error-type> a, uint16_t p
+)
+Initializes the WiFi UDP library and network settings. Starts WiFiUDP socket, listening at local port PORT
+Parameters:
+    port: the local port to listen on (int)
+Return:
+    1: if successful 0: if there are no sockets available to use
+```
+
+```cpp
+bool WiFiUDP::begin(
+    uint8_t i2c_addr = MPU6050_I2CADDR_DEFAULT,
+    TwoWire *wire = &Wire,
+    int32_t sensorID = 0
+)
+    It starts processing the next available incoming packet, checks for the presence of a UDP packet, and reports the size. parsePacket() must be called before reading the buffer with UDP.read().
+Parameters:
+    None
+Return 
+    the size of the packet in bytes 0: if no packets are available
+```
+
+```cpp
+int WiFiUDP::read(
+    char* buffer, 
+    size_t len
+)
+Parameters:
+    buffer: buffer to hold incoming packets (char*)
+    len: maximum size of the buffer (int)
+Return:
+    b: the characters in the buffer (char) size: the size of the buffer -1: if no buffer is available
+```
+
+```cpp
+IPAddress WiFiUDP::remoteIP()
+    Gets the IP address of the remote connection.
+    This function must be called after WiFiUDP.parsePacket().
+Parameters:
+    None
+Return:
+   4 bytes : the IP address of the host who sent the current incoming packet 
+```
+
+```cpp
+uint16_t WiFiUDP::remotePort()
+    Gets the port of the remote UDP connection.
+    This function must be called after UDP.parsePacket().
+Parameters:
+    None
+Return:
+    The port of the host who sent the current incoming packet
+```
+
+```cpp
+int WiFiUDP::beginPacket(IPAddress ip, uint16_t port)
+    Starts a connection to write UDP data to the remote connection
+Parameters:
+    hostName: the address of the remote host. It accepts a character string or an IPAddress
+    hostIp: the IP address of the remote connection (4 bytes)
+    port: the port of the remote connection (int)
+Return:
+    1: if successful 0: if there was a problem with the supplied IP address or port
+```
+
+```cpp
+size_t WiFiUDP::write(const uint8_t *buffer, size_t size)
+    Writes UDP data to the remote connection. Must be wrapped between beginPacket() and endPacket(). beginPacket() initializes the packet of data, it is not sent until endPacket() is called.
+Parameters:
+    byte: the outgoing byte buffer: the outgoing message size: the size of the buffer
+Return:
+    single byte into the packet bytes size from buffer into the packet
+```
+
+```cpp
+int WiFiUDP::endPacket()
+    Called after writing UDP data to the remote connection. It finishes off the packet and send it.
+Parameters:
+    None
+Return:
+    1: if the packet was sent successfully 0: if there was an error
 ```
