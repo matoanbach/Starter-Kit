@@ -4,13 +4,16 @@ The ESP32 is an affordable, low-power system on a chip micro-controller that int
 
 This repository serves as a collection of solutions and guides for embarking on ESP32-related projects. Here, we will go from basic to intermediate levels, enabling our computers to interact with the ESP32 via an access point. To start, you'll need to learn how to install the necessary libraries for sensors, screens, and the ESP32 itself. I've outlined the essential methods and libraries required, so I encourage you to review this information to gain a solid understanding before you begin assembling hardware and writing firmware. Each project is attached with its own documentation and solutions. For the best learning experience, try to tackle the challenges independently before referring to the solutions provided.
 
-# About us
-
 # Table of content
 
-- [Bill of Material]()
-- [Projects]()
-- [Instruction]()
+- [Bill of Material](#project)
+- [About Us](#about-us)
+- [Projects](#project)
+- [Instruction](#instructions)
+
+# About Us
+
+Canada Robotix is your source for Raspberry Pi, Arduino, Adafruit, SparkFun, Pololu, and a lot more. We are here to make your DIY electronics and robotics project possible. We Love Robotics!
 
 # Project
 
@@ -41,5 +44,16 @@ This repository serves as a collection of solutions and guides for embarking on 
 # Instructions:
 
 ## Library installation
+
+For this starter kit, we are going to use many libraries, so we better know how to install library into our Arduino IDE.
+
+To install a library (e.g: Adafruit_GFX.h):
+<ol>
+    <li>Search for adafruit_gfx.h arduino library</li>
+    <li>Download the latest version (the file downloaded should be a zip file)</li>
+    <li>Open Arduino IDE</li>
+    <li>Go to <code>Sketch</code> > Include <code>Library</code> > <code>Add .ZIP Library</code></li>
+    <li>Select Adafruit_GFX file that you just downloaded</li>
+</ol>
 
 ## Library interface
