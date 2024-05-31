@@ -48,6 +48,7 @@ Canada Robotix is your source for Raspberry Pi, Arduino, Adafruit, SparkFun, Pol
 For this starter kit, we are going to use many libraries, so we better know how to install library into our Arduino IDE.
 
 To install a library (e.g: Adafruit_GFX.h):
+
 <ol>
     <li>Search for adafruit_gfx.h arduino library</li>
     <li>Download the latest version (the file downloaded should be a zip file)</li>
@@ -57,3 +58,21 @@ To install a library (e.g: Adafruit_GFX.h):
 </ol>
 
 ## Library interface
+
+Now let's walk through some methods (functions) that we are going to use in each library.
+
+### TFT screen: <code>Adafruit_GFX.h</code>, <code>Adafruit_ST7735.h</code>, <code>SPI.h</code>
+
+```cpp
+Adafruit_ST7735::Adafruit_ST7735(<error-type> cs, <error-type> dc, <error-type> mosi, <error-type> sclk, <error-type> rst)
++4 overloads
+
+Instantiate Adafruit ST7735 driver with software SPI
+
+Parameters:
+cs – Chip select pin #
+dc – Data/Command pin #
+mosi – SPI MOSI pin #
+sclk – SPI Clock pin #
+rst – Reset pin # (optional, pass -1 if unused)
+```
