@@ -4,7 +4,7 @@ In this project, we will integrate a TFT LCD display with ESP32 using specialize
 
 ## Hardware Assembly
 
-<img src="https://github.com/matoanbach/Starter-Kit/tree/main/pics/p2.png" width="500">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p2.png">
 
 ### Pin Connection
 
