@@ -8,49 +8,49 @@
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 #include <SPI.h>             // Arduino SPI library
 
-// Pin definitions for TFT screen
+// Pins for the TFT display (CS, RST, DC) are defined for communication setup.
 #define TFT_CS 5
 #define TFT_RST 27
 #define TFT_DC 32
 
-// Initialize global variable for mpu sensors
 Adafruit_MPU6050 mpu;
-// Initialize global variable for TFT screen
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 void setup(void)
 {
-  // Set up the screen
-  tft.initR(INITR_BLACKTAB);      // Initialize screen type
-  tft.fillScreen(ST7735_BLACK);   // Fill background
-  tft.setTextColor(ST7735_WHITE); // Set text color
-  tft.setTextSize(1);             // Set text size
-  tft.setCursor(0, 0);            // Set cursor position
+  // Initializes the TFT display with specific configurations like rotation, color, and text size.
+  tft.initR(INITR_BLACKTAB);      
+  tft.fillScreen(ST7735_BLACK);   
+  tft.setTextColor(ST7735_WHITE); 
+  tft.setTextSize(1);             
+  tft.setCursor(0, 0);            
   Serial.begin(115200);
 
-  // Set up mpu sensors
+  // Initializes serial communication for debugging and starts communication with the MPU6050 sensor.
   mpu.begin();
+
+  //Configures the MPU6050 settings such as accelerometer range, gyro range, and filter bandwidth
   mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
   mpu.setGyroRange(MPU6050_RANGE_500_DEG);
   mpu.setFilterBandwidth(MPU6050_BAND_5_HZ);
-  Serial.println("");
   delay(100);
 }
 
 void loop()
 {
-  /*
-  clear screen after a period of time
-  and the reset the position to display outputs 
-  */
+  // Clears the TFT display 
   tft.fillScreen(ST7735_BLACK);
+
+  // resets the cursor position.
   tft.setCursor(0, 0);
 
-  /* Get new sensor events with the readings */
+  // Retrieves sensor data for acceleration, gyroscope, and temperature from the MPU6050.
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
 
-  /* Print out the values for acceleration */
+  // Displays this data formatted on the TFT screen. Each sensor reading is labeled
+  // and displayed with its respective units (meters per second squared for acceleration, 
+  // radians per second for gyro, and degrees Celsius for temperature).
   tft.println("Accelaration: ");
   tft.print("X: ");
   tft.println(a.acceleration.x);
@@ -61,7 +61,6 @@ void loop()
   tft.println(" m/s^2");
   tft.println("---------------------");
 
-  /* Print out the values for rotation */
   tft.println("Rotation");
   tft.print("X: ");
   tft.println(g.gyro.x);
@@ -72,7 +71,6 @@ void loop()
   tft.println(" rad/s");
   tft.println("---------------------");
 
-  /* Print out the values for temperature */
   tft.println("Temperature: ");
   tft.print(temp.temperature);
   tft.println(" degC");

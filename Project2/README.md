@@ -1,6 +1,6 @@
 ## Challenge
 
-In this project, we will integrate a TFT LCD display with ESP32 using specialized libraries to manage graphics and display some strings to the screen. You should attempt to write code using pseudocode and library explanation I provided. 
+In this project, we will integrate a TFT LCD display with ESP32 using specialized libraries to manage graphics and display some strings to the screen. You should attempt to write code using pseudocode and library methods I provided. 
 
 ## Hardware Assembly
 
