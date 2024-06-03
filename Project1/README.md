@@ -1,11 +1,13 @@
 ## How to install library for ESP32 board
-Go to <code>tools</code> > <code>Board</code> > <code>Board Managers</code> and then find <code>esp32 by espressif Systems</code>
+
+Go to <code>tools</code> > <code>Board</code> > <code>Board Managers</code> and then find and install<code>esp32 by espressif Systems</code>. After installing, again, Go to <code>tools</code> > <code>Board</code> > <code>es32</code> > <code>ES32 Dev Module</code>
 
 ## Challenge:
 
 This project is meant form environment set up. You will need to download and install Arduino IDE. After that, you run a test to print "Hello World" to the console.
 
 ## Pseudocode:
+
 ```cpp
 Function setup:
     Initialize serial communication with baud rate of 115200
@@ -14,12 +16,10 @@ Function loop:
     Repeat indefinitely:
         Wait for 3000 milliseconds
         Print "Hello world" to the serial output
-        Clear the screen
 ```
 
-
-
 ## Code explained:
+
 ```cpp
 void setup()
     This function is called once when the program starts. It is used to initialize settings or components that are used throughout the program.
