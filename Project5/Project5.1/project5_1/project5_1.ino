@@ -18,7 +18,7 @@
 // necessary hardware interface pins.
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
-// Credentials for the WiFi access point.
+// Network credentials for ESP32 Access Point
 const char *ssid = "ESP32-Access-Point";
 const char *password = "123456789";
 
@@ -63,7 +63,8 @@ void loop() {
     // Reads the packet into the buffer and null-terminates it to form a valid string.
     int len = udp.read(incomingPacket, 255);
     if (len > 0) {
-      incomingPacket[len] = 0;  // Null-terminate the string
+      // Null-terminate the string
+      incomingPacket[len] = 0; 
     }
     // Displays the received message on the TFT screen.
     tft.println(incomingPacket);
