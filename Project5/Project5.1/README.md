@@ -1,6 +1,6 @@
 # Challenge
 
-In this project we will explore the real power of ESP32, which is networking. We will set up a client sending message and then display the message received on the TFT screen.
+In this project we will explore the real power of ESP32, which is networking. We will set up one way communication where a client sending message and then display the message received on the TFT screen.
 
 # Hardware Assembly
 
@@ -18,6 +18,10 @@ In this project we will explore the real power of ESP32, which is networking. We
 | 6 – VCC |    Power    |     5V     |
 | 7 – BL  |  Backlight  |     5V     |
 | 8 – GND | Ground (0V) |    GND     |
+
+# Network Diagram
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/5_1.png">
 
 # Pseudocode for the Client
 
@@ -63,7 +67,7 @@ Start
 End
 ```
 
-# pseudocode for ESP32
+# Pseudocode for ESP32
 
 ```cpp
 Include necessary libraries

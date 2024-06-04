@@ -9,13 +9,10 @@ using namespace std;
 
 // Constant defining the maximum length of the buffer used for reading and sending
 const int BUF_LEN = 255;
-
 // Boolean variable to control the main loop of the client.
 bool is_running;
-
 // Port number on which the server is expected to listen
 int PORT = 4210;
-
 // The IP address of the server.
 char IP_ADDRESS[] = "192.168.4.1";
 
@@ -69,7 +66,6 @@ int main()
             // Prints the sent message for confirmation.
             cout << "message sent: " << buffer << endl;
         }
-
         // Checks if the message is "quit" (to exit the loop and close the client).
         if (strncmp("quit", buffer, 4) == 0)
         {
@@ -80,6 +76,5 @@ int main()
 
     // Closes the socket with close(sock) to release resources
     close(sock);
-
     return 0;
 }
