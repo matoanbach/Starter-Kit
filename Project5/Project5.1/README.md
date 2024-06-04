@@ -21,7 +21,7 @@ In this project we will explore the real power of ESP32, which is networking. We
 
 # Network Diagram
 
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/5_1.jpeg">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_1.jpeg">
 
 # Pseudocode for the Client
 
