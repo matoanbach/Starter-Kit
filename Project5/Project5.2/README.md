@@ -14,6 +14,7 @@ We have previously set up a server sending some messages to our Access Point set
 | BLUE  |    P19     |
 
 # Network Diagram
+
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_21.jpeg" width="60%">
 
 # Pseudocode
@@ -38,3 +39,18 @@ Define setColor function:
   Set the LED to the calculated color intensities
   Wait for 5 seconds before the next change
 ```
+
+# Instruction
+
+Step 1: Download and install PackageSender
+Step 2: Visit this repo and download project5_2.ino
+Step 2: In project5_2.ino, you can change the name and password of the access point. Afterward, upload the code into the ESP32. If you don’t have a battery for the ESP32, then you can use your computer as a power souce for the ESP32.
+Step 3: The IP address of the ESP32 should be there on the TFT screen, so note it down because this will be used as an address that your message will be sent to.
+Step 4: Open PackSender and connect your computer with the name of your access point or “ESP32-Access-point” as default.
+Step 5: In PackageSender, you need to write an integer value under ASCII section, you copy the address and the port displayed on TFT screen and then put them under address and port section. Because we set up the ESP32 to accept UDP packet, we should set it to UDP in PackageSender and then press send. To be more illustrative, an picture is provided below:
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_22.png" width="60%">
+
+# What you should see
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_23.jpeg" width="60%">
