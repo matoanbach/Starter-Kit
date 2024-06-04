@@ -4,7 +4,7 @@ We have previously set up a server sending some messages to our Access Point set
 
 # Hardware Assembly
 
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_2.png">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_2.png" width="100%">
 
 | Color | To ESP Pin |
 | :---: | :--------: |
@@ -14,7 +14,7 @@ We have previously set up a server sending some messages to our Access Point set
 | BLUE  |    P19     |
 
 # Network Diagram
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_21.png" width="60%">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_21.jpeg" width="60%">
 
 # Pseudocode
 
