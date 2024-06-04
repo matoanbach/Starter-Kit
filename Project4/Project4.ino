@@ -1,9 +1,9 @@
-// Import libraries for MPU sensors
+// Include libraries for MPU sensors
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
-// Import libraries for TFT screen
+// Include libraries for handling graphics on an Adafruit ST7735 TFT display.
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 #include <SPI.h>             // Arduino SPI library
@@ -18,12 +18,17 @@ Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 void setup(void)
 {
-  // Initializes the TFT display with specific configurations like rotation, color, and text size.
-  tft.initR(INITR_BLACKTAB);      
-  tft.fillScreen(ST7735_BLACK);   
-  tft.setTextColor(ST7735_WHITE); 
-  tft.setTextSize(1);             
-  tft.setCursor(0, 0);            
+  // Initializes the display with specific settings. 
+  tft.initR(INITR_BLACKTAB);
+  // Clears the display by filling it with black.
+  tft.fillScreen(ST7735_BLACK);
+  // Sets the text color to white.
+  tft.setTextColor(ST7735_WHITE);
+  // Sets the text size.
+  tft.setTextSize(1);
+  // Positions the cursor at the top-left corner of the display.
+  tft.setCursor(0, 0);          
+  // Sets up the serial communication
   Serial.begin(115200);
 
   // Initializes serial communication for debugging and starts communication with the MPU6050 sensor.
@@ -40,10 +45,8 @@ void loop()
 {
   // Clears the TFT display 
   tft.fillScreen(ST7735_BLACK);
-
   // resets the cursor position.
   tft.setCursor(0, 0);
-
   // Retrieves sensor data for acceleration, gyroscope, and temperature from the MPU6050.
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
