@@ -1,12 +1,23 @@
-# Challenge
+# Project 5.1: Real-time Data Communication and Display
 
-In this project we will explore the real power of ESP32, which is networking. We will set up one way communication where a client sending message and then display the message received on the TFT screen.
+## Overview
 
-# Hardware Assembly
+Project 5.1 focuses on establishing an one-way real-time communication system between a computer client application and an ESP32 server using UDP (User Datagram Protocol). This project aims to demonstrate the integration of network communication and data display on an Adafruit ST7735 TFT display
+
+## Material
+
+1. ESP32
+2. TFT Screen
+
+## Objectives
+
+1. Implement a UDP client: Create a client application on a computer that can send data to an ESP32 server over a network.
+2. Implement a ESP32 server: Configure the ESP32 to act as a server that receives data sent from the client.
+3. Visual Feedback: Use a TFT display connected to the ESP32 to visually represent the data received from the computer
+
+## Hardware Assembly
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p2.png">
-
-# Pin Connection
 
 | LCD Pin | Description | To ESP Pin |
 | :-----: | :---------: | :--------: |
@@ -19,11 +30,37 @@ In this project we will explore the real power of ESP32, which is networking. We
 | 7 – BL  |  Backlight  |     5V     |
 | 8 – GND | Ground (0V) |    GND     |
 
-# Network Diagram
+## Network Diagram
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_1.jpeg" width="60%">
 
-# Pseudocode for the Client
+## Pseudocode for ESP32
+
+```cpp
+Include necessary libraries
+
+Define pin connections for the TFT display
+Create a TFT display object
+
+Define WiFi credentials
+Define UDP port and packet buffer
+
+Function setup:
+    Initialize the TFT display with specific settings
+    Start serial communication for debugging
+    Set up the ESP32 as a WiFi access point with the specified credentials
+    Display the IP address and port on the TFT
+    Start the UDP service on the specified port
+
+Function loop:
+    Check if a UDP packet is available
+    If a packet is available:
+        Read the packet into the buffer
+        Ensure the packet is a properly terminated string
+        Display the packet on the TFT display
+```
+
+## Pseudocode for the Client
 
 ```cpp
 Set BUF_LEN to 255
@@ -67,32 +104,15 @@ Start
 End
 ```
 
-# Pseudocode for ESP32
+## Instruction
 
-```cpp
-Include necessary libraries
+<ul>
+    <li>Step 1: Visit this repo and download two files for this project (client file, project5_1.ino)</li>
+    <li>Step 2: In project5_1.ino, you can change the name and password of the access point. Afterward, upload the code into the ESP32. If you don’t have a battery for the ESP32, then you can use your computer as a power source for the ESP32.</li>
+    <li>Step 3: The IP address of the ESP32 should be there on the TFT screen, so note it down because this will be used as an address of your message you want to send</li>
+    <li>Step 4: In server.cpp, change IP_ADDRESS and PORT corresponding to the values displayed on the TFT screen. These are IP address and port number of our ESP32.</li>
+</ul>
 
-Define pin connections for the TFT display
-Create a TFT display object
-
-Define WiFi credentials
-Define UDP port and packet buffer
-
-Function setup:
-    Initialize the TFT display with specific settings
-    Start serial communication for debugging
-    Set up the ESP32 as a WiFi access point with the specified credentials
-    Display the IP address and port on the TFT
-    Start the UDP service on the specified port
-
-Function loop:
-    Check if a UDP packet is available
-    If a packet is available:
-        Read the packet into the buffer
-        Ensure the packet is a properly terminated string
-        Display the packet on the TFT display
-```
-
-# What you should see
+## What you should see
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_11.jpeg">
