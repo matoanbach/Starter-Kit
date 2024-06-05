@@ -108,8 +108,9 @@ Define send function for the thread:
 1. Download project6_2.ino
 2. Change your ESP32 name and password for the access point if you want
 3. Verify and upload the instruction into the ESP32
-4. Download client file
-5. On your terminal, go to the client file and run:
+4. Connect your computer to the ESP32 access point
+5. Download client file
+6. On your terminal, go to the client file and run:
 
 ```console
 make clean all
