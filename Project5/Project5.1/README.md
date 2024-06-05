@@ -106,12 +106,11 @@ End
 
 ## Instruction
 
-<ul>
-    <li>Step 1: Visit this repo and download two files for this project (client file, project5_1.ino)</li>
-    <li>Step 2: In project5_1.ino, you can change the name and password of the access point. Afterward, upload the code into the ESP32. If you don’t have a battery for the ESP32, then you can use your computer as a power source for the ESP32.</li>
-    <li>Step 3: The IP address of the ESP32 should be there on the TFT screen, so note it down because this will be used as an address of your message you want to send</li>
-    <li>Step 4: In server.cpp, change IP_ADDRESS and PORT corresponding to the values displayed on the TFT screen. These are IP address and port number of our ESP32.</li>
-</ul>
+1. Visit this repo and download two files for this project (client file, project5_1.ino).
+2. In project5_1.ino, you can change the name and password of the access point. Afterward, upload the code into the ESP32. If you don’t have a battery for the ESP32, then you can use your computer as a power source for the ESP32.
+3. The IP address of the ESP32 should be there on the TFT screen, so note it down because this will be used as an address of your message you want to send
+4. In server.cpp, change IP_ADDRESS and PORT corresponding to the values displayed on the TFT screen. These are IP address and port number of our ESP32.
+5. Create a new terminal and go to the client file and run: <code>make clean all</code>
 
 ## What you should see
 
