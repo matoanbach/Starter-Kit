@@ -45,5 +45,8 @@ Function loop:
     Display "Temperature" label and value on TFT display
     Display a separator line
     Wait for 100 milliseconds
-
 ```
+
+# What you should see
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p4_1.jpeg">
