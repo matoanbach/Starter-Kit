@@ -1,4 +1,4 @@
-# Project 6.2: Bidirectional Communication with Real-Time Data Processing
+# Project 6.2: Real-Time IMU Data Logging to computer
 
 ## Overview
 
@@ -35,7 +35,6 @@ In Project 6.2, we build up from previous projects by implementing a system that
 ## Network Diagram
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_24.jpeg" width="100%">
-
 
 ## Pseudocode for ESP32
 
@@ -104,7 +103,25 @@ Define send function for the thread:
     If the user enters "0", stop the loop and exit the thread
 ```
 
+## Instruction
+
+1. Download project6_2.ino
+2. Change your ESP32 name and password for the access point if you want
+3. Verify and upload the instruction into the ESP32
+4. Download client file
+5. On your terminal, go to the client file and run:
+
+```console
+make clean all
+```
+
+6. Create a new terminal, go to the client file and run:
+
+```console
+tail -f log.txt
+```
+
 ## What you should see
 
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_23.png" width="100%">
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_22.png" width="50%">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_23.png" width="70%">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_22.png" width="100%">
