@@ -1,8 +1,23 @@
-# Challenge
+# Project 5.2: Interactive LED Control via UDP on ESP32
 
-We have previously set up a server sending some messages to our Access Point set up on the ESP32. In this project, we will use a software, PackageSender, to send messages to our ESP32 to light up our LED corresponding to our message. However, you can reuse client.cpp in Project5.1 If you have any trouble downloading and installing PackageSender.
+## Overview
 
-# Hardware Assembly
+Project 5.2 is about setting up a firmware utilizing the ESP32's capabilities for wireless communication. This project will guide you how to control RGB LEDs via UDP communications. The firmware is designed to respond to remote commands that adjust LED colors based on received inputs, providing an immediate visual presentation of the data on the TFT display. 
+
+## Material
+
+1. TFT Screen
+2. 330Ω resistors
+3. RGB LED
+4. ESP32
+
+## Objective
+
+1. Establish UDP communication: Implement a UDP server on the ESP32 that can receive color control commands from a remote client
+2. Enhance Visual Interaction: Utilize an Adafruit ST7735 TFT display to provide feedback on the received commands and display the current state of the system
+3. Dynamic LED Control: Develop a system where RGB LEDs change color based on the commands received via the UDP network.
+
+## Hardware Assembly
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_2.jpeg" width="100%">
 
@@ -13,11 +28,12 @@ We have previously set up a server sending some messages to our Access Point set
 | GREEN |    P21     |
 | BLUE  |    P19     |
 
-# Network Diagram
+
+## Network Diagram
 
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_21.jpeg" width="60%">
 
-# Pseudocode
+## Pseudocode for ESP32
 
 ```cpp
 Declare necessary libraries and define pins

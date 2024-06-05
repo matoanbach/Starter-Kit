@@ -2,11 +2,7 @@
 
 ## Overview
 
-In Project 6.2, we build up from previous projects by implementing a system that supports bidirectional communication between a computer and an ESP32. This program not only allows the computer to receive data but also to send specific commands to request different types of data. By utilizing UDP protocol for network communication, this project involves the ESP32 sending sensor data based on requests and the computer dynamically displaying and logging this data to a separate file. By the end of this project, participants will know:
-
-1. How to set up bidirectional communication between multiple devices.
-2. How to log data to a file and display it in real-time.
-3. Multi-threading
+In Project 6.2, we build up from previous projects by implementing a system that supports bidirectional communication between a computer and an ESP32. This program not only allows the computer to receive data but also to send specific commands to request different types of data. By utilizing UDP protocol for network communication, this project involves the ESP32 sending sensor data based on requests and the computer dynamically displaying and logging this data to a separate file. 
 
 ## Material
 
@@ -116,7 +112,7 @@ Define send function for the thread:
 make clean all
 ```
 
-6. Create a new terminal, go to the client file and run:
+7. Create a new terminal, go to the client file and run:
 
 ```console
 tail -f log.txt
