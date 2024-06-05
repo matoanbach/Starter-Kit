@@ -1,32 +1,41 @@
-// Import libararies
+// Include libraries for handling WiFi functions and UDP communications on the ESP32.
 #include <cstring>
 #include <WiFi.h>
 #include <WiFiUDP.h>
 
+// Include libraries for handling graphics on an Adafruit ST7735 TFT display.
 #include <Adafruit_GFX.h>     // Core graphics library
 #include <Adafruit_ST7735.h>  // Hardware-specific library for ST7735
 #include <SPI.h>              // Arduino SPI library
 
+// Include libraries for handling sensors.
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
+// Pins for the TFT display (CS, RST, DC) are defined for communication setup.
 #define TFT_CS 5
 #define TFT_RST 27
 #define TFT_DC 32
 
 const int BUF_LEN = 255;
 
-// Set up name and password for wifi
+// Network credentials for ESP32 Access Point
 const char *ssid = "ESP32-Access-Point";
 const char *password = "123456789";
+// Client's address
 const char *remoteIP = "192.168.4.2";
+// Client's port
 const int remotePort = 4211;
 
+// Instance of the WiFiUDP class for handling UDP communications.
 WiFiUDP udp;
-unsigned int localUdpPort = 4210;  // Local port to listen on
-char recv_package[BUF_LEN];        // Buffer for incoming packets
-char send_package[BUF_LEN];        // Buffer for incoming packets
+// UDP port number on which the ESP32 listens.
+unsigned int localUdpPort = 4210;  
+// Buffer to for receive and send UDP packets.
+char recv_package[BUF_LEN];        
+char send_package[BUF_LEN];    
+// Type of data that the computer wants   
 int type_package = 1;
 
 // set up sensor and tft screen
@@ -66,9 +75,11 @@ void setup(void) {
 }
 
 void recvTask(void *pvParameters) {
+  // Continuously checks for incoming UDP packets.
   while (1) {
     int packageSize = udp.parsePacket();
     if (packageSize > 0) {
+      // Reads the packet into the buffer and null-terminates it to form a valid string.
       udp.read(recv_package, BUF_LEN);
       type_package = atoi(recv_package);
     }
@@ -76,9 +87,11 @@ void recvTask(void *pvParameters) {
 }
 
 void sendTask(void *pvParameters) {
+  // Send data back to the remote client based on the received type
   while (1) {
     while (type_package != 0) {
       udp.beginPacket(remoteIP, remotePort);
+      // Send different types of sensor data
       switch (type_package) {
         case 1:
           sprintf(send_package, "Acceleration: \nX: %f\nY: %f\nZ: %f\n", temp.acceleration.x, temp.acceleration.y, temp.acceleration.z);
@@ -98,13 +111,12 @@ void sendTask(void *pvParameters) {
 }
 
 void displayTask(void *pvParameters) {
+  // Continuously update and display sensor data on the TFT screen
   while (1) {
     tft.fillScreen(ST7735_BLACK);
     tft.setCursor(0, 0);
-    /* Get new sensor events with the readings */
     mpu.getEvent(&a, &g, &temp);
 
-    /* Print out the values */
     tft.println("Accelaration: ");
     tft.print("X: ");
     tft.println(a.acceleration.x);
