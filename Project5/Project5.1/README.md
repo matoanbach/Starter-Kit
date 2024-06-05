@@ -1,6 +1,6 @@
 # Challenge
 
-In this project we will explore the real power of ESP32, which is networking. We will set up one way communication where a client sending message and then display the message received on the TFT screen. 
+In this project we will explore the real power of ESP32, which is networking. We will set up one way communication where a client sending message and then display the message received on the TFT screen.
 
 # Hardware Assembly
 
@@ -92,3 +92,7 @@ Function loop:
         Ensure the packet is a properly terminated string
         Display the packet on the TFT display
 ```
+
+# What you should see
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p5_11.jpeg">
