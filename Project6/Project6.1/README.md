@@ -2,7 +2,7 @@
 
 ## Overview
 
-Project 6.1 involves creating a system where an ESP32 wirelessly transmits strain gauge sensor values to a computer. This project enhances the capabilities of an earlier setup by incorporating wireless data transmission, allowing remote monitoring of sensor data.
+Project 6.1 involves creating a system where an ESP32 wirelessly transmits strain gauge sensor values to a computer. This project enhances the capabilities of an earlier setup (we can resuse project4.ino) by incorporating wireless data transmission, allowing remote monitoring of sensor data.
 
 ## Material
 
