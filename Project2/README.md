@@ -52,3 +52,7 @@ Function setup:
 Function loop:
     Do nothing (endless loop)
 ```
+
+## What you should see
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p2_1.jpeg">
