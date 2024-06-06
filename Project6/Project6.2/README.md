@@ -112,6 +112,10 @@ Define send function for the thread:
 make clean all
 ```
 
+```console
+./client
+```
+
 7. Create a new terminal, go to the client file and run:
 
 ```console

@@ -95,4 +95,8 @@ Loop:
 make clean all
 ```
 
+```console
+./client
+```
+
 ## What you should see
