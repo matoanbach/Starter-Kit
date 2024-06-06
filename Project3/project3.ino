@@ -1,66 +1,53 @@
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
-#include <SPI.h>             // Arduino SPI library
+// Include libraries for the HX711 load cell amplifier and the Adafruit ST7735 Display
+#include <Arduino.h>
 #include "HX711.h"
 
+// Include libraries for handling graphics on an Adafruit ST7735 TFT display.
+#include <Adafruit_GFX.h>     // Core graphics library
+#include <Adafruit_ST7735.h>  // Hardware-specific library for ST7735
+#include <SPI.h>              // Arduino SPI library
 
+// Pins for the TFT display (CS, RST, DC) are defined for communication setup.
 #define TFT_CS 5
 #define TFT_RST 27
 #define TFT_DC 32
 
-#define DT 23
-#define SCK 21
-
-Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
+// HX711 circuit wiring
+const int LOADCELL_DOUT_PIN = 17;
+const int LOADCELL_SCK_PIN = 16;
 
 HX711 scale;
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("HX711 Demo");
-  Serial.println("Initializing the scale");
+  // Initializes the display with specific settings.
+  tft.initR(INITR_BLACKTAB);
+  // Clears the display by filling it with black.
+  tft.fillScreen(ST7735_BLACK);
+  // Sets the text color to white.
+  tft.setTextColor(ST7735_WHITE);
+  // Sets the text size.
+  tft.setTextSize(1);
+  // Positions the cursor at the top-left corner of the display.
+  tft.setCursor(0, 0);
+  // Sets up the serial communication
 
-  scale.begin(DT, SCK);
-
-  Serial.println("Before setting up the scale:");
-  Serial.print("read: \t\t");
-  Serial.println(scale.read());      // print a raw reading from the ADC
-
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20));   // print the average of 20 readings from the ADC
-
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5));   // print the average of 5 readings from the ADC minus the tare weight (not set yet)
-
-  Serial.print("get units: \t\t");
-  Serial.println(scale.get_units(5), 1);  // print the average of 5 readings from the ADC minus tare weight (not set) divided
-            // by the SCALE parameter (not set yet)
-            
-  scale.set_scale(-810.747);
-  //scale.set_scale(-471.497);                      // this value is obtained by calibrating the scale with known weights; see the README for details
+  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
+  scale.set_scale(1174.468);  // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();               // reset the scale to 0
-
-  Serial.println("After setting up the scale:");
-
-  Serial.print("read: \t\t");
-  Serial.println(scale.read());                 // print a raw reading from the ADC
-
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20));       // print the average of 20 readings from the ADC
-
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5));   // print the average of 5 readings from the ADC minus the tare weight, set with tare()
-
-  Serial.print("get units: \t\t");
-  Serial.println(scale.get_units(5), 1);        // print the average of 5 readings from the ADC minus tare weight, divided
-            // by the SCALE parameter set with set_scale
-
-  Serial.println("Readings:");
 }
 
 void loop() {
-  Serial.print("one reading:\t");
-  Serial.print(scale.get_units(), 1);
-  Serial.print("\t| average:\t");
-  Serial.println(scale.get_units(10), 5);
+  // Clears the TFT display
+  tft.fillScreen(ST7735_BLACK);
+  // resets the cursor position.
+  tft.setCursor(0, 0);
+
+  tft.print("Weight: ");
+  // Read the current weight from the HX711 scale
+  tft.print(scale.get_units(10), 5);
+  tft.println(" gram");
+
+  delay(1000);
 }

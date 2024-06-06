@@ -18,4 +18,3 @@ Function loop:
         Wait for 3000 milliseconds
         Print "Hello world" to the serial output
 ```
-## What you should see
