@@ -31,7 +31,7 @@ Project 6.1 involves creating a system where an ESP32 wirelessly transmits strai
 
 ## Network Diagram
 
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_21.jpeg">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_11.jpeg">
 
 ## Pseudocode for Client
 
