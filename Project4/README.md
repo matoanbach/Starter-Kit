@@ -1,6 +1,19 @@
-## Challenge
+# Project 4: Real-Time Sensor Data Visualization on TFT display
 
-This Arduino sketch is designed to interface with an MPU6050 sensor module and a TFT display based on the ST7735 driver. The MPU6050 is a popular motion processing unit that combines a gyroscope, accelerometer, and a temperature sensor. The data from this sensor is displayed in real-time on the TFT display.
+## Overview
+
+Project 5.1 aims to create an integrated system using the ESP32 microcontroller along with the Adafruit MPU6050 sensor and an Adafruit ST7735 TFT display. This project focuses on capturing real-time motion data and displaying it on a TFT display.
+
+## Material
+
+1. IMU sensor
+2. TFT Screen
+3. ESP32
+
+## Objectives
+
+1. Sensor Data Acquisition: Utilize the Adafruit MPU6050 to gather real-time accelerometer, gyroscope, and temperature data.
+2. Data Visualisation: Implement a graphical interface on the Adafruit ST7735 TFT display to show sensor data
 
 ## Hardware Assembly
 
