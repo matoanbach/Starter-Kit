@@ -1,6 +1,18 @@
-## Challenge
+# Project 2: "Hello" on Screen
+
+## Overview
 
 In this project, we will integrate a TFT LCD display with ESP32 using specialized libraries to manage graphics and display some strings to the screen. You should attempt to write code using pseudocode and library methods I provided. 
+
+## Material
+
+1. TFT Screen
+2. ESP32
+
+## Objective
+
+1. Interface with a TFT Display: Understand the wiring and software configuration needed to drive an Adafruit ST7735 TFT display using an ESP32 microcontroller.
+2. Implement Basic Graphics Programming: Use the Adafruit GFX library to display text and manage simple graphics.
 
 ## Hardware Assembly
 
