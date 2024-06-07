@@ -99,13 +99,13 @@ calibration factor: (reading) / (known weight)
 ### Measuring the weight of an object
 
 1. Use your code that you wrote to measure an object or you can download and unload project3.ino into the ESP32.
-2. Hold the strain gauge up like I did below and then press RESET.
+2. Hold the strain gauge up like I did below and then press RESET, the weight displayed on the screen should be close to 0.
 <div>
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_12.png" width="50%">
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_13.jpeg" width="50%">
 </div>
 
-3. Put a penny on the strain gauge like I did below.
+3. Put a penny (or your preferred object) on the strain gauge like I did below.
 
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_14.png" width="50%">
 
