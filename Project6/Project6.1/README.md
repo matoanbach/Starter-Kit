@@ -100,4 +100,8 @@ make clean all
 ```
 
 ## What you should see
-If you see the measure value is not close to the true value, 
+To proceed to measure an object, we need to calibrate it first, so visit project 4 to see how we can calibrate. 
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_12.jpeg">
+
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p6_13.jpeg">
