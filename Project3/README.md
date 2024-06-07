@@ -18,7 +18,7 @@ Project 3 is to design a weight measurement system using the HX711 load cell amp
 
 ## Hardware Assembly
 
-<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3.png">
+<img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3.jpeg">
 
 ## Pseudocode
 
