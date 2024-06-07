@@ -89,17 +89,25 @@ Every calibration factor might be different, so this step can't be skipped.
 <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_1.png">
 
 5. Calculate your calibration factor using this equation:
+
 ```console
 calibration factor: (reading) / (known weight)
 ```
-6. In my case, the penny is around 2.5g so I got a result of ~2760. So my calibration factor should be around 1174. Save this number for later use when we measure pennies.
 
+6. In my case, the penny is around 2.5g so I got a result of ~2760. So my calibration factor should be around 1174. Save this number for later use when we measure pennies.
 
 ### Measuring the weight of an object
 
 1. Use your code that you wrote to measure an object or you can download and unload project3.ino into the ESP32.
 2. Hold the strain gauge up like I did below and then press RESET.
 
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_12.png" width="50%">
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_13.png" width="50%">
+
 3. Put a penny on the strain gauge like I did below.
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_14.png" width="50%">
 
 4. The weight should be displayed on the TFT screen like below.
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_15.png" width="50%">
+
+## What you should see
