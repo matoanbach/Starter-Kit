@@ -94,7 +94,7 @@ Every calibration factor might be different, so this step can't be skipped.
 calibration factor: (reading) / (known weight)
 ```
 
-6. In my case, the penny is around 2.5g so I got a result of ~2760. So my calibration factor should be around 1174. Save this number for later use when we measure pennies.
+6. In my case, the loonie is around 6.27g so I got a result of ~433.33. So my calibration factor should be around 1174. Save this number for later use when we measure pennies.
 
 ### Measuring the weight of an object
 
