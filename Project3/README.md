@@ -113,4 +113,3 @@ calibration factor: (reading) / (known weight)
 
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_15.jpeg" width="50%">
 
-## What you should see
