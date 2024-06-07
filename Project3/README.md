@@ -102,12 +102,12 @@ calibration factor: (reading) / (known weight)
 2. Hold the strain gauge up like I did below and then press RESET.
 
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_12.png" width="50%">
-   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_13.png" width="50%">
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_13.jpeg" width="50%">
 
 3. Put a penny on the strain gauge like I did below.
    <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_14.png" width="50%">
 
 4. The weight should be displayed on the TFT screen like below.
-   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_15.png" width="50%">
+   <img src="https://raw.githubusercontent.com/matoanbach/Starter-Kit/main/pics/p3_15.jpeg" width="50%">
 
 ## What you should see
