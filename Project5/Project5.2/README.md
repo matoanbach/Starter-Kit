@@ -2,7 +2,7 @@
 
 ## Overview
 
-Project 5.2 is about setting up a firmware utilizing the ESP32's capabilities for wireless communication. This project will guide you how to control RGB LEDs via UDP communications. The firmware is designed to respond to remote commands that adjust LED colors based on received inputs, providing an immediate visual presentation of the data on the TFT display.
+Project 5.2 is about setting up a firmware utilizing the ESP32's capabilities for wireless communication. This project will guide you how to control RGB LEDs via UDP communications. The firmware is designed to respond to remote commands that adjust LED colors based on received inputs, providing an immediate visual presentation of the data on the TFT display. Previously, we set up a client on the computer, you can reuse the same client.cpp but you can also use Package Sender as a client.
 
 ## Material
 

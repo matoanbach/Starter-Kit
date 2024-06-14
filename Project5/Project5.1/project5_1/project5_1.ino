@@ -49,11 +49,12 @@ void setup() {
   WiFi.softAP(ssid, password);
   // Begins listening for UDP packets on the specified port.
   udp.begin(localUdpPort);
-  // Displays the IP address and port number on the TFT.
+  // Displays the IP address and port number on the TFT for 5 seconds.
   tft.println("IP Address: ");
   tft.println(WiFi.softAPIP());
   tft.println("PORT: ");
   tft.println(localUdpPort);
+  delay(5000);
 }
 
 void loop() {

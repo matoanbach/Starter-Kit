@@ -54,11 +54,13 @@ void setup(void) {
 
   // Set up the ESP32 as an Access Point
   WiFi.softAP(ssid, password);
+  // Start UDP
+  udp.begin(localUdpPort);
+
+  // Displays the IP address and port number on the TFT for 5 seconds.
   tft.println("IP Address: ");
   tft.println(WiFi.softAPIP());
 
-  // Start UDP
-  udp.begin(localUdpPort);
   tft.println("PORT: ");
   tft.println(localUdpPort);
 

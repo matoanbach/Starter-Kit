@@ -2,7 +2,7 @@
 
 ## Overview
 
-Project 5.1 aims to create an integrated system using the ESP32 microcontroller along with the Adafruit MPU6050 sensor and an Adafruit ST7735 TFT display. This project focuses on capturing real-time motion data and displaying it on a TFT display.
+Project 4 aims to create an integrated system using the ESP32 microcontroller along with the Adafruit MPU6050 sensor and an Adafruit ST7735 TFT display. This project focuses on capturing real-time motion data and displaying it on a TFT display.
 
 ## Material
 
