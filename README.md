@@ -17,12 +17,12 @@ Canada Robotix is your source for Raspberry Pi, Arduino, Adafruit, SparkFun, Pol
 
 # Project
 
-- [PROJECT 1:]()
-- [PROJECT 2:]()
-- [PROJECT 3:]()
-- [PROJECT 4:]()
-- [PROJECT 5:]()
-- [PROJECT 6:]()
+- [PROJECT 1:](https://github.com/matoanbach/Starter-Kit/tree/main/Project1)
+- [PROJECT 2:](https://github.com/matoanbach/Starter-Kit/tree/main/Project2)
+- [PROJECT 3:](https://github.com/matoanbach/Starter-Kit/tree/main/Project3)
+- [PROJECT 4:](https://github.com/matoanbach/Starter-Kit/tree/main/Project4)
+- [PROJECT 5:](https://github.com/matoanbach/Starter-Kit/tree/main/Project5)
+- [PROJECT 6:](https://github.com/matoanbach/Starter-Kit/tree/main/Project6)
 
 # Bill of Material
 
